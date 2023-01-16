@@ -38,7 +38,10 @@ class LocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
         if status == .notDetermined {
             return
         }
-        completionHandler()
+        
+        if status == .authorizedAlways {
+            completionHandler()
+        }
     }
     
     // MARK: - Process
